@@ -13,9 +13,7 @@
   ~
   ~ You should have received a copy of the GNU General Public License
   ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<page>
+  --><page>
 	<content-type>/page/article</content-type>	<display-template>/templates/web/pages/article.ftl</display-template>
 	<merge-strategy>inherit-levels</merge-strategy>
 	<objectGroupId>07fc</objectGroupId>
@@ -26,7 +24,7 @@
 	</item></sections_o>
 	<file-name>index.xml</file-name>
 	<folder-name>coffee-is-good-for-your-health</folder-name>
-	<internal-name>Coffee is Good for Your Health</internal-name>
+	<internal-name>Coffee is Good for Your Health1</internal-name>
 	<title_t>Coffee is Good for Your Health</title_t>
 	<subject_t>Coffee is Good for Your Health</subject_t>
 	<author_s>John Doe</author_s>
