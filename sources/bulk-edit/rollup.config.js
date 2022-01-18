@@ -39,7 +39,7 @@ function commitMessage(tpl, file) {
 }
 
 function rollupPluginCommit() {
-  const target = '../../config/studio/plugins/js/org/craftercms/plugin/sidebar/bulkedit/index.js';
+  const target = '../../config/studio/static-assets/plugins/org/craftercms/plugin/sidebar/bulkedit/index.js';
   const message = 'Updates to {file} @ {date} {time}';
   return {
     name: 'rollup-plugin-commit',
@@ -96,7 +96,7 @@ export default {
     }),
     commonjs(),
     copy({
-      targets: [{ src: 'dist/*', dest: '../../config/studio/plugins/js/org/craftercms/plugin/sidebar/bulkedit' }],
+      targets: [{ src: 'dist/*', dest: '../../config/studio/static-assets/plugins/org/craftercms/plugin/sidebar/bulkedit' }],
       hook: 'writeBundle'
     }),
     rollupPluginCommit()
