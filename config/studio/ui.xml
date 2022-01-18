@@ -18,6 +18,13 @@
 	<widget id="craftercms.components.ToolsPanel">
 		<configuration>
 			<widgets>
+				<widget id="org.craftercms.bulkEditPlugin.components.BulkEditApp">
+					<plugin id="org.craftercms.plugin"
+							type="sidebar"
+							name="bulkedit"
+							file="index.js"
+					/>
+        </widget>
 				<widget id="craftercms.components.ToolsPanelEmbeddedAppViewButton">
 					<configuration>
 						<title id="words.dashboard" defaultMessage="Dashboard"/>
