@@ -45,7 +45,7 @@ const DRAWER_WIDTH = 240;
 
 const TEXT_FIND_REPLACE = 'Find and Replace';
 const TEXT_FILTER = 'Apply Filters';
-const TEXT_SAVE = 'Save Change';
+const TEXT_SAVE = 'Save all changes';
 const TEXT_CANCEL = 'Cancel All Change';
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
