@@ -26493,7 +26493,7 @@ var DataSheet = /*#__PURE__*/e__default.forwardRef(function (props, ref) {
 var DRAWER_WIDTH = 240;
 var TEXT_FIND_REPLACE = 'Find and Replace';
 var TEXT_FILTER = 'Apply Filters';
-var TEXT_SAVE = 'Save Change';
+var TEXT_SAVE = 'Save all changes';
 var TEXT_CANCEL = 'Cancel All Change';
 var Main = styled$3('main', {
   shouldForwardProp: function shouldForwardProp(prop) {
