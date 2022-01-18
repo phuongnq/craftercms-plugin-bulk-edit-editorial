@@ -25538,7 +25538,7 @@ var DialogHelper = {
   }
 };
 
-var PAGE_SIZE = 9;
+var DEFAULT_PAGE_SIZE = 9;
 var ROWS_PER_PAGE_OPTIONS = [9, 15, 21];
 var DEFAULT_COLUMN_WIDTH = 220;
 var useStyles = makeStyles({
@@ -25842,6 +25842,11 @@ var DataSheet = /*#__PURE__*/e__default.forwardRef(function (props, ref) {
       loading = _React$useState38[0],
       setLoading = _React$useState38[1];
 
+  var _React$useState39 = e__default.useState(DEFAULT_PAGE_SIZE),
+      _React$useState40 = _slicedToArray(_React$useState39, 2),
+      pageSize = _React$useState40[0],
+      setPageSize = _React$useState40[1];
+
   e__default.useImperativeHandle(ref, function () {
     return {
       cancelAllChanges: function cancelAllChanges() {
@@ -26061,7 +26066,7 @@ var DataSheet = /*#__PURE__*/e__default.forwardRef(function (props, ref) {
               displayFields = getDisplayFieldsFromConfig(config);
               setColumns(buildColumnsFromDisplayFields(displayFields));
               _context4.next = 10;
-              return StudioAPI.searchByContentType(contentType, keyword, filterEditDate, page * PAGE_SIZE, PAGE_SIZE);
+              return StudioAPI.searchByContentType(contentType, keyword, filterEditDate, page * pageSize, pageSize);
 
             case 10:
               _yield$StudioAPI$sear = _context4.sent;
@@ -26441,12 +26446,15 @@ var DataSheet = /*#__PURE__*/e__default.forwardRef(function (props, ref) {
     rows: sessionRows,
     columns: columns,
     pagination: true,
-    pageSize: PAGE_SIZE,
+    pageSize: pageSize,
     rowsPerPageOptions: ROWS_PER_PAGE_OPTIONS,
     rowCount: totalItems,
     paginationMode: "server",
     onPageChange: function onPageChange(newPage) {
       return setPage(newPage);
+    },
+    onPageSizeChange: function onPageSizeChange(newPageSize) {
+      return setPageSize(newPageSize);
     },
     loading: loading,
     disableSelectionOnClick: true,
