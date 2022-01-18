@@ -40,7 +40,7 @@ import ActionHelper from '../helpers/action';
 import ContentTypeHelper from '../helpers/content_type';
 import DialogHelper from '../helpers/dialog';
 
-const PAGE_SIZE = 9;
+const DEFAULT_PAGE_SIZE = 9;
 const ROWS_PER_PAGE_OPTIONS = [9, 15, 21];
 const DEFAULT_COLUMN_WIDTH = 220;
 
@@ -224,6 +224,7 @@ const DataSheet = React.forwardRef((props, ref) => {
   const [page, setPage] = React.useState(0);
   const [totalItems, setTotalItems] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
+  const [pageSize, setPageSize] = React.useState(DEFAULT_PAGE_SIZE);
 
   React.useImperativeHandle(ref, () => ({
     cancelAllChanges: () => {
@@ -367,7 +368,7 @@ const DataSheet = React.forwardRef((props, ref) => {
       const displayFields = getDisplayFieldsFromConfig(config);
       setColumns(buildColumnsFromDisplayFields(displayFields));
 
-      const { items, total } = await StudioAPI.searchByContentType(contentType, keyword, filterEditDate, page * PAGE_SIZE, PAGE_SIZE);
+      const { items, total } = await StudioAPI.searchByContentType(contentType, keyword, filterEditDate, page * pageSize, pageSize);
       setTotalItems(total);
       const paths = items.map(item => item.path);
 
@@ -577,11 +578,12 @@ const DataSheet = React.forwardRef((props, ref) => {
         rows={sessionRows}
         columns={columns}
         pagination
-        pageSize={PAGE_SIZE}
+        pageSize={pageSize}
         rowsPerPageOptions={ROWS_PER_PAGE_OPTIONS}
         rowCount={totalItems}
         paginationMode="server"
         onPageChange={(newPage) => setPage(newPage)}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         loading={loading}
         disableSelectionOnClick
         editRowsModel={editRowsModel}
