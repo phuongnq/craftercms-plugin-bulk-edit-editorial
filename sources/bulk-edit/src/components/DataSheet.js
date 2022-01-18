@@ -40,8 +40,8 @@ import ActionHelper from '../helpers/action';
 import ContentTypeHelper from '../helpers/content_type';
 import DialogHelper from '../helpers/dialog';
 
-const PAGE_SIZE = 2;
-const ROWS_PER_PAGE_OPTIONS = [2];
+const PAGE_SIZE = 9;
+const ROWS_PER_PAGE_OPTIONS = [9, 15, 21];
 const DEFAULT_COLUMN_WIDTH = 220;
 
 const useStyles = makeStyles({
